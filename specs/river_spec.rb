@@ -17,14 +17,17 @@ class Rivertest < MiniTest::Test
     assert_equal("Wye", @river1.name)
   end
 
-  def test_river_has_fish
-    assert_equal(2, @river1.fish.length)
+  def test_fish_count
+    assert_equal(2,@river1.count_fish)
   end
 
-  def test_river_lost_fish
+  def test_river_has_fish
+    assert_equal(2, @river1.count_fish)
+  end
 
-    @river1.lose_fish(@fish1)
-    assert_equal(1, @river1.fish.length)
+  def test_lose_fish
+    @river1.lose_fish
+    assert_equal(1, @river1.count_fish)
   end
 
 end
