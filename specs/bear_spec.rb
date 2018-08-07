@@ -10,7 +10,7 @@ class Beartest < MiniTest::Test
     @fish1 = Fish.new("Percy Perch")
     @fish2 = Fish.new("Roddy Roach")
     @river1 = River.new("Tamar", [@fish1, @fish2])
-    @bear1 = Bear.new("Bert", "brown")
+    @bear1 = Bear.new("Bert", "brown", "Grrrrr")
   end
 
   def test_bear_has_name
@@ -30,5 +30,9 @@ class Beartest < MiniTest::Test
     assert_equal(1, @bear1.stomach.length)
     assert_equal(1,@river1.count_fish)
   end
-  
+  def test_bear_makes_noise
+    actual = @bear1.roar
+    assert_equal("Grrrrr!", actual)
+  end
+
 end
