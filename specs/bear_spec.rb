@@ -30,9 +30,21 @@ class Beartest < MiniTest::Test
     assert_equal(1, @bear1.stomach.length)
     assert_equal(1,@river1.count_fish)
   end
+
   def test_bear_makes_noise
     actual = @bear1.roar
     assert_equal("Grrrrr!", actual)
   end
+
+  def test_anything_in_stomach__nothing
+    assert_equal("I'm hungry!", @bear1.stomach_contents)
+  end
+
+  def test_anything_in_stomach__something
+    @fish = Fish.new("Donny Dab")
+    @bear2 = Bear.new("Bruno", "brown", "Growl", [@fish])
+    assert_equal("I've had 1 fish!", @bear2.stomach_contents)
+  end
+  
 
 end
