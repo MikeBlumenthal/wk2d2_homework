@@ -1,6 +1,7 @@
 require("minitest/autorun")
 require("minitest/rg")
 require_relative("../bear.rb")
+require_relative("../river.rb")
 
 class Beartest < MiniTest::Test
 
@@ -19,5 +20,5 @@ class Beartest < MiniTest::Test
   def test_bear_has_stomach
     assert_equal(0, @bear1.stomach.length)
   end
-  
+
 end
